@@ -2,69 +2,44 @@
 <head>
 </head>
 <body>
-<h1>Prueba Chat SF</h1>
-  <style type='text/css'>
-	.embeddedServiceHelpButton .helpButton .uiButton {
-		background-color: #005290;
-		font-family: "Arial", sans-serif;
-	}
-	.embeddedServiceHelpButton .helpButton .uiButton:focus {
-		outline: 1px solid #005290;
-	}
-</style>
+<h1>Prospectos UALA</h1>
+ <!--  ----------------------------------------------------------------------  -->
+<!--  NOTA: Agregue el siguiente elemento <META> a su página <HEAD>.  Si es   -->
+<!--  preciso, modifique el parámetro charset para especificar el conjunto    -->
+<!--  de caracteres de su página HTML.                                        -->
+<!--  ----------------------------------------------------------------------  -->
 
-<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
-<script type='text/javascript'>
-	var initESW = function(gslbBaseURL) {
-		embedded_svc.settings.displayHelpButton = true; //O falso
-		embedded_svc.settings.language = ''; //Por ejemplo, ingrese 'en' o 'en-US'
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
 
-		//embedded_svc.settings.defaultMinimizedText = '...'; //(Toma como valor predeterminado Sesión de chat con un experto)
-		//embedded_svc.settings.disabledMinimizedText = '...'; //(Toma como valor predeterminado Agente sin conexión)
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTA: Agregue el siguiente elemento <FORM> a su página.                 -->
+<!--  ----------------------------------------------------------------------  -->
 
-		//embedded_svc.settings.loadingText = ''; //(Toma como valor predeterminado Cargando)
-		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Establece el dominio para su desarrollo de modo que los visitantes puedan navegar por subdominios durante una sesión de chat)
+<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
 
-		// Configuración para Plática
-		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-			// Returns a valid button ID.
-		//};
-		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Establece el relleno automático de los campos del formulario previo al chat
-		//embedded_svc.settings.fallbackRouting = []; //Una matriz de identificadores de botones, de usuario o userId_buttonId
-		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Toma como valor predeterminado la opción Contacto)
+<input type=hidden name="oid" value="00D3h000000E4ve">
+<input type=hidden name="retURL" value="https://andykot.github.io/chatweb/">
 
-		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-		embedded_svc.settings.entryFeature = 'LiveAgent';
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTA: Estos campos son elementos de depuración opcionales. Elimine      -->
+<!--  los comentarios de estas líneas si desea realizar una prueba en el      -->
+<!--  modo de depuración.                                                     -->
+<!--  <input type="hidden" name="debug" value=1>                              -->
+<!--  <input type="hidden" name="debugEmail" value="andykotzer@gmail.com">    -->
+<!--  ----------------------------------------------------------------------  -->
 
-		embedded_svc.init(
-			'https://curious-hawk-bzqdf1-dev-ed.my.salesforce.com',
-			'https://caso-developer-edition.na111.force.com/liveAgentSetupFlow',
-			gslbBaseURL,
-			'00D3h000000E4ve',
-			'call_center',
-			{
-				baseLiveAgentContentURL: 'https://c.la4-c2-ph2.salesforceliveagent.com/content',
-				deploymentId: '5723h000000d45V',
-				buttonId: '5733h000000d58H',
-				baseLiveAgentURL: 'https://d.la4-c2-ph2.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'call_center',
-				isOfflineSupportEnabled: true
-			}
-		);
-	};
+<label for="first_name">Nombre</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
 
-	if (!window.embedded_svc) {
-		var s = document.createElement('script');
-		s.setAttribute('src', 'https://curious-hawk-bzqdf1-dev-ed.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-		s.onload = function() {
-			initESW(null);
-		};
-		document.body.appendChild(s);
-	} else {
-		initESW('https://service.force.com');
-	}
-</script>
-</body>
- 
-</html>
+<label for="last_name">Apellidos</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
+
+<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+
+<label for="company">Compañía</label><input  id="company" maxlength="40" name="company" size="20" type="text" /><br>
+
+<label for="city">Ciudad</label><input  id="city" maxlength="40" name="city" size="20" type="text" /><br>
+
+<label for="state">Estado/Provincia</label><input  id="state" maxlength="20" name="state" size="20" type="text" /><br>
+
+<input type="submit" name="submit">
+
+</form>
